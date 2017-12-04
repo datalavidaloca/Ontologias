@@ -1,0 +1,1228 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://purl.org/ontologydomain/oem/OLM/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://purl.org/ontologydomain/oem/OLM/"
+     versionIRI="http://purl.org/ontologydomain/oem/OLM/">
+    <Prefix name="" IRI="http://purl.org/ontologydomain/oem/OLM/"/>
+    <Prefix name="ns" IRI="http://purl.org/net/provenance/ns#"/>
+    <Prefix name="OLM" IRI="http://purl.org/ontologydomain/oem/OLM/"/>
+    <Prefix name="ns1" IRI="http://www.w3.org/2003/06/sw-vocab-status/ns#"/>
+    <Prefix name="olm" IRI="http://purl.org/ontologydomain/oem/OLM#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="foaf" IRI="http://xmlns.com/foaf/0.1/"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="skos" IRI="http://www.w3.org/2004/02/skos/core#"/>
+    <Prefix name="terms" IRI="http://purl.org/dc/terms/"/>
+    <Prefix name="vocab" IRI="http://www.w3.org/1999/xhtml/vocab#"/>
+    <Prefix name="litebibo" IRI="http://purl.org/ontologydomain/oem/litebibo#"/>
+    <Prefix name="ontology" IRI="http://dbpedia.org/ontology/"/>
+    <Prefix name="liteteach" IRI="http://purl.org/ontologydomain/oem/liteteach#"/>
+    <Import>http://purl.org/ontologydomain/oem/liteteach/</Import>
+    <Import>http://purl.org/ontologydomain/oem/litebibo/</Import>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:description"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">OLM (Ontology of Learning Materials) Ontología de propósito general sobre recursos de aprendizaje para su consulta por alumnos y profesores</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">OLM (Ontology of Learning Materials) is a general purpose ontology (but not a general ontology) about learning resources materials whose aim is to be consulted by teachers and students</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="terms:creator"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Raul Del Aguila</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="vocab:license"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">https://creativecommons.org/licenses/by-nc-nd/3.0/es/</Literal>
+    </Annotation>
+    <Declaration>
+        <ObjectProperty IRI="http://purl.org/ontologydomain/oem/liteteach/studentGroup"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="EducationalOrganization"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="use"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="terms:rights"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://purl.org/ontologydomain/oem/liteteach/arrangedAt"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isDescribedIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="origenDocumental"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isTakenBy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="MarianoFernandez"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/PresentialLecture"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="TecnicasSemanticasAvanzadas"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Course"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/StudentGroup"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isPresentedAt"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="MUIA"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="transmisionVideo1"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="LearningMaterial"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="contains"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="numSlides"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="grading"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="foaf:Group"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isAbout"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/eLearningLecture"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="UIMP"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/TransmisionDocumental"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="takes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isShownAt"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="SyllabusBibliography"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="puedeContener"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Material"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="LectureSupportMaterial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Lecture"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="academicTerm"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="worksIn"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="EvaluacionDeOntologias"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isEnrolledIn"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Teacher"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="title"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="arrange"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="RaulDelAguila"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="author"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Student"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Syllabus"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="attendsTo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="PortalUPVX"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="PabloGonzalez"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="duration"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="uploads"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="video_session_evaluacion"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="teachs"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://purl.org/ontologydomain/oem/liteteach/teacherOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="resumes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="video"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/StudyProgram"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="TeacherNotes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="StudentMaterial"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="setUp"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="TableOfContents"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="WebTecnologiaSemanticaAvanzada"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="destinoDocumental"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="BookBibliography"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Module"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="LectureNotes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Bibliography"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="MariCarmenSuarez"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="MetodologiaNeOn"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="OntologyEngineering"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Material"/>
+        <Class abbreviatedIRI="foaf:Document"/>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="Bibliography"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Document"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Bibliography"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="terms:references"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Book"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="BookBibliography"/>
+        <Class IRI="Bibliography"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="BookBibliography"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="terms:isPartOf"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Book"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="EducationalOrganization"/>
+        <Class abbreviatedIRI="foaf:Organization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="EducationalOrganization"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="setUp"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Website"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="LearningMaterial"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Document"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="LearningMaterial"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="isAbout"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Module"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="LectureNotes"/>
+        <Class IRI="StudentMaterial"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="LectureNotes"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="isTakenBy"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Student"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="LectureNotes"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="resumes"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Lecture"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="LectureSupportMaterial"/>
+        <Class IRI="LearningMaterial"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="StudentMaterial"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Document"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Syllabus"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Document"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Syllabus"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="terms:hasPart"/>
+            <Class IRI="SyllabusBibliography"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="SyllabusBibliography"/>
+        <Class IRI="Bibliography"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="TableOfContents"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/DocumentPart"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="TeacherNotes"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Note"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="TeacherNotes"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="terms:hasPart"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/litebibo/BookSection"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="TeacherNotes"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="terms:hasPart"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Excerpt"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="TeacherNotes"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.org/ontologydomain/oem/litebibo/cites"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/litebibo/BookSection"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="TeacherNotes"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.org/ontologydomain/oem/litebibo/cites"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Excerpt"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="TeacherNotes"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.org/ontologydomain/oem/litebibo/reviewOf"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Book"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="video"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/AudioVisualDocument"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="video"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="isShownAt"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Lecture"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="video"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="duration"/>
+            <Datatype abbreviatedIRI="xsd:int"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="video"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="title"/>
+            <Datatype abbreviatedIRI="owl:rational"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/PresentialLecture"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Lecture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/TransmisionDocumental"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="destinoDocumental"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Webpage"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/TransmisionDocumental"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="origenDocumental"/>
+            <Class IRI="Bibliography"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/TransmisionDocumental"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="origenDocumental"/>
+            <Class IRI="Syllabus"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/TransmisionDocumental"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="origenDocumental"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/litebibo/BookSection"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/TransmisionDocumental"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="origenDocumental"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Excerpt"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/TransmisionDocumental"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="origenDocumental"/>
+            <Class abbreviatedIRI="foaf:Document"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/eLearningLecture"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Lecture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/eLearningLecture"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.org/ontologydomain/oem/litebibo/reproducedIn"/>
+            <Class IRI="video"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/AudioVisualDocument"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="resumes"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Lecture"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Book"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://prismstandard.org/namespaces/1.2/basic/isbn"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Book"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="title"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Book"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://purl.org/ontologydomain/oem/litebibo/abstract"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Book"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://purl.org/ontologydomain/oem/litebibo/numPages"/>
+            <Datatype abbreviatedIRI="xsd:int"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Book"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://purl.org/ontologydomain/oem/litebibo/pages"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Note"/>
+        <Class IRI="LearningMaterial"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Note"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.org/ontologydomain/oem/litebibo/reviewOf"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Lecture"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Slide"/>
+        <Class IRI="LectureSupportMaterial"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Slide"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.org/ontologydomain/oem/litebibo/cites"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/litebibo/BookSection"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Slide"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.org/ontologydomain/oem/litebibo/cites"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Excerpt"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Slide"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="numSlides"/>
+            <Datatype abbreviatedIRI="xsd:int"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Slide"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="title"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Slideshow"/>
+        <Class IRI="LectureSupportMaterial"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Slideshow"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="isPresentedAt"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Lecture"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Slideshow"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="title"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Slideshow"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://purl.org/ontologydomain/oem/litebibo/numPages"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Webpage"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="contains"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Document"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Webpage"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="title"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Course"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="terms:isPartOf"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/liteteach/StudyProgram"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Course"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.org/ontologydomain/oem/liteteach/studentGroup"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/liteteach/StudentGroup"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Course"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="terms:hasPart"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Lecture"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Course"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="terms:hasPart"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Module"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Course"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="isDescribedIn"/>
+            <Class IRI="Syllabus"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Course"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="grading"/>
+            <Datatype abbreviatedIRI="rdfs:Literal"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Course"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="academicTerm"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Course"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="foaf:name"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Material"/>
+        <Class abbreviatedIRI="foaf:Document"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Module"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="terms:hasPart"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Lecture"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Student"/>
+        <Class abbreviatedIRI="foaf:Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Student"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="terms:isPartOf"/>
+            <Class abbreviatedIRI="foaf:Group"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Student"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="attendsTo"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Lecture"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Student"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="author"/>
+            <Class IRI="StudentMaterial"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Student"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="isEnrolledIn"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/liteteach/StudyProgram"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Student"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="takes"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Note"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/StudentGroup"/>
+        <Class abbreviatedIRI="foaf:Group"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/StudyProgram"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty abbreviatedIRI="terms:hasPart"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Course"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/StudyProgram"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="title"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Teacher"/>
+        <Class abbreviatedIRI="foaf:Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Teacher"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="author"/>
+            <Class IRI="LearningMaterial"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Teacher"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="author"/>
+            <Class IRI="Syllabus"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Teacher"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="teachs"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Course"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Teacher"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="teachs"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Lecture"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Teacher"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="use"/>
+            <Class IRI="/TransmisionDocumental"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Teacher"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="worksIn"/>
+            <Class IRI="EducationalOrganization"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Teacher"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://purl.org/ontologydomain/oem/litebibo/annotates"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Book"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="foaf:Organization"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="arrange"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/liteteach/StudyProgram"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="Bibliography"/>
+        <Class IRI="Syllabus"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/AudioVisualDocument"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Note"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="EducationalOrganization"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Document"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Webpage"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Website"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Module"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/StudentGroup"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/StudyProgram"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="EducationalOrganization"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Lecture"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="LectureNotes"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Book"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Slideshow"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="/PresentialLecture"/>
+        <Class IRI="/eLearningLecture"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/AudioVisualDocument"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Book"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Book"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Note"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Note"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Course"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Slide"/>
+        <Class abbreviatedIRI="foaf:Image"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Webpage"/>
+        <Class abbreviatedIRI="foaf:Person"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Student"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/StudentGroup"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="/PresentialLecture"/>
+        <NamedIndividual IRI="EvaluacionDeOntologias"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/StudyProgram"/>
+        <NamedIndividual IRI="MUIA"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Teacher"/>
+        <NamedIndividual IRI="MariCarmenSuarez"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Teacher"/>
+        <NamedIndividual IRI="MarianoFernandez"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="teachs"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Course"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="MarianoFernandez"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/eLearningLecture"/>
+        <NamedIndividual IRI="MetodologiaNeOn"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Book"/>
+        <NamedIndividual IRI="OntologyEngineering"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Student"/>
+        <NamedIndividual IRI="PabloGonzalez"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Website"/>
+        <NamedIndividual IRI="PortalUPVX"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Student"/>
+        <NamedIndividual IRI="RaulDelAguila"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Course"/>
+        <NamedIndividual IRI="TecnicasSemanticasAvanzadas"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="EducationalOrganization"/>
+        <NamedIndividual IRI="UIMP"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Webpage"/>
+        <NamedIndividual IRI="WebTecnologiaSemanticaAvanzada"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="/TransmisionDocumental"/>
+        <NamedIndividual IRI="transmisionVideo1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="video"/>
+        <NamedIndividual IRI="video_session_evaluacion"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="teachs"/>
+        <NamedIndividual IRI="MariCarmenSuarez"/>
+        <NamedIndividual IRI="MetodologiaNeOn"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="use"/>
+        <NamedIndividual IRI="MariCarmenSuarez"/>
+        <NamedIndividual IRI="transmisionVideo1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="teachs"/>
+        <NamedIndividual IRI="MarianoFernandez"/>
+        <NamedIndividual IRI="EvaluacionDeOntologias"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="arrange"/>
+        <NamedIndividual IRI="UIMP"/>
+        <NamedIndividual IRI="MUIA"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="destinoDocumental"/>
+        <NamedIndividual IRI="transmisionVideo1"/>
+        <NamedIndividual IRI="WebTecnologiaSemanticaAvanzada"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="origenDocumental"/>
+        <NamedIndividual IRI="transmisionVideo1"/>
+        <NamedIndividual IRI="video_session_evaluacion"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="isShownAt"/>
+        <NamedIndividual IRI="video_session_evaluacion"/>
+        <NamedIndividual IRI="EvaluacionDeOntologias"/>
+    </ObjectPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="attendsTo"/>
+        <ObjectProperty IRI="http://purl.org/ontologydomain/oem/liteteach/arrangedAt"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="contains"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="destinoDocumental"/>
+        <ObjectProperty IRI="uploads"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="origenDocumental"/>
+        <ObjectProperty IRI="uploads"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="puedeContener"/>
+        <ObjectProperty IRI="http://purl.org/NET/c4dm/event.owl#product"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="takes"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="use"/>
+        <ObjectProperty IRI="uploads"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="worksIn"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="foaf:homepage"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="arrange"/>
+        <Class IRI="EducationalOrganization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="author"/>
+        <Class abbreviatedIRI="foaf:Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isEnrolledIn"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Student"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isPresentedAt"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Slideshow"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="isShownAt"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/AudioVisualDocument"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="setUp"/>
+        <Class IRI="EducationalOrganization"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="takes"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Student"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="teachs"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Teacher"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="use"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Teacher"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="arrange"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/StudyProgram"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="destinoDocumental"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Webpage"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isAbout"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Module"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isDescribedIn"/>
+        <Class IRI="Syllabus"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isEnrolledIn"/>
+        <ObjectUnionOf>
+            <Class IRI="EducationalOrganization"/>
+            <Class IRI="http://purl.org/ontologydomain/oem/liteteach/StudyProgram"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isPresentedAt"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Lecture"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isShownAt"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Lecture"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="isTakenBy"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Student"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="origenDocumental"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Document"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="resumes"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/Lecture"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="setUp"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/litebibo/Website"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="takes"/>
+        <Class IRI="LectureNotes"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="worksIn"/>
+        <Class abbreviatedIRI="foaf:Organization"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://purl.org/ontologydomain/oem/liteteach/teacherOf"/>
+        <Class IRI="http://purl.org/ontologydomain/oem/liteteach/StudentGroup"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="terms:description"/>
+        <IRI>Bibliography</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A bibliograghy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="terms:description"/>
+        <IRI>BookBibliography</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Books&apos;s bibliography</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="terms:description"/>
+        <IRI>EducationalOrganization</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Institution such as Universities or Schools that arranges study programs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="terms:description"/>
+        <IRI>LearningMaterial</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Learning materials are prepared by teachers that works for an educational institution</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>LectureNotes</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Notes taken by students in a lecture class</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>LectureSupportMaterial</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Material and resources to support  teacher&apos;s lectures</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="terms:description"/>
+        <IRI>StudentMaterial</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Material prepared by students</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="terms:description"/>
+        <IRI>Syllabus</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The syllabus contains the contents and reference material of a course</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="terms:description"/>
+        <IRI>SyllabusBibliography</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">The bibliography with the materials of a course</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>TableOfContents</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Book&apos;s table of contents</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="terms:description"/>
+        <IRI>TeacherNotes</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Notes prepared by tachers that resumes some lectures and also can include extract from books</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>arrange</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Arrange is a property that relates an institution with a studyprogram</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>author</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Author relates a person with a document made by that person</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>contains</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TeacherNotes can contains references or excepts of some books</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>isAbout</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">the theme of a resource</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>isDescribedIn</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A course is described in a syllabus</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>isEnrolledIn</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">a Student is enrolled in a course</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>isPresentedAt</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">a slideshow is presented at a lecture</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>isShownAt</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">where a video is shown</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>isTakenBy</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Notes are taken by a student</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>resumes</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A resource resumes a lecture class</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>setUp</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">an institution set up a website</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>takes</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">inverse relation of is taken by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>teachs</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">a property that relates a teacher with a course</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>video</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A video can be hold and uploaded to a webpage and contains an explanation about a module of a subject</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isPresentedAt</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">this object property is similar to isShownAt, but the subject is  a slideshow instead of a video</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#isPresentedAt</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">isShownAt</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isShownAt</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">this property relates a video with a lecture in which this resource is shown</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/PresentialLecture</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Lecture that is given in a room with students</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/TransmisionDocumental</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">this is a bias-class to represent a n-ary relation among document, webpage and teacher</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="terms:description"/>
+        <IRI>/eLearningLecture</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Lecture given by means of a web portal</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>/eLearningLecture</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Lecture given by means of a web page/portal</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://purl.org/ontologydomain/oem/liteteach/Student</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Student enrolled in a study program arranged by an educational institution</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://purl.org/ontologydomain/oem/liteteach/Teacher</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Teacher that works in an educational institution</Literal>
+    </AnnotationAssertion>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty abbreviatedIRI="terms:rights"/>
+        <AnnotationProperty abbreviatedIRI="ns:createdBy"/>
+    </SubAnnotationPropertyOf>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
