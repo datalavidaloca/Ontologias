@@ -1,0 +1,27 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; ":Teacher" "OLM:Syllabus" ":Student" "OLM:LectureNotes" "OLM:TableOfContents" "OLM:video" "OLM:LectureSupportMaterial" "OLM:EducationalOrganization" ":Material" ":PresentialLecture" "OLM:TeacherNotes" "OLM:LearningMaterial" "foaf:Group" "OLM:SyllabusBibliography" ":eLearningLecture" "OLM:Bibliography" ":StudentGroup" "OLM:BookBibliography" ":Lecture" "OLM:StudentMaterial" ; /*classes style*/
+	":Teacher" -> "foaf:Person" [ label = "rdfs:subClassOf" ];
+	"OLM:video" -> ":AudioVisualDocument" [ label = "rdfs:subClassOf" ];
+	"OLM:Bibliography" -> ":Document" [ label = "rdfs:subClassOf" ];
+	"OLM:SyllabusBibliography" -> "OLM:Bibliography" [ label = "rdfs:subClassOf" ];
+	":PresentialLecture" -> ":Lecture" [ label = "rdfs:subClassOf" ];
+	":Material" -> "foaf:Document" [ label = "rdfs:subClassOf" ];
+	"OLM:TeacherNotes" -> ":Note" [ label = "rdfs:subClassOf" ];
+	":Slideshow" -> "OLM:LectureSupportMaterial" [ label = "rdfs:subClassOf" ];
+	":StudentGroup" -> "foaf:Group" [ label = "rdfs:subClassOf" ];
+	"OLM:BookBibliography" -> "OLM:Bibliography" [ label = "rdfs:subClassOf" ];
+	"OLM:Syllabus" -> ":Document" [ label = "rdfs:subClassOf" ];
+	":Slide" -> "OLM:LectureSupportMaterial" [ label = "rdfs:subClassOf" ];
+	":eLearningLecture" -> ":Lecture" [ label = "rdfs:subClassOf" ];
+	":Student" -> "foaf:Person" [ label = "rdfs:subClassOf" ];
+	"OLM:LearningMaterial" -> ":Document" [ label = "rdfs:subClassOf" ];
+	"OLM:EducationalOrganization" -> "foaf:Organization" [ label = "rdfs:subClassOf" ];
+	":Note" -> "OLM:LearningMaterial" [ label = "rdfs:subClassOf" ];
+	"OLM:StudentMaterial" -> ":Document" [ label = "rdfs:subClassOf" ];
+	"OLM:LectureNotes" -> "OLM:StudentMaterial" [ label = "rdfs:subClassOf" ];
+	"OLM:TableOfContents" -> ":DocumentPart" [ label = "rdfs:subClassOf" ];
+	"OLM:LectureSupportMaterial" -> "OLM:LearningMaterial" [ label = "rdfs:subClassOf" ];
+
+}

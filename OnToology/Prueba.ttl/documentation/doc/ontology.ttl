@@ -1,0 +1,883 @@
+@prefix : <http://purl.org/ontologydomain/oem/OLM/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://purl.org/ontologydomain/oem/OLM/> .
+
+<http://purl.org/ontologydomain/oem/OLM/> rdf:type owl:Ontology ;
+                                           owl:versionIRI <http://purl.org/ontologydomain/oem/OLM/> ;
+                                           owl:imports <http://purl.org/ontologydomain/oem/litebibo/> ,
+                                                       <http://purl.org/ontologydomain/oem/liteteach/> ;
+                                           <http://purl.org/dc/terms/creator> "Raul Del Aguila"^^xsd:string ;
+                                           <http://purl.org/dc/terms/description> "OLM (Ontology of Learning Materials) Ontología de propósito general sobre recursos de aprendizaje para su consulta por alumnos y profesores"^^xsd:string ;
+                                           <http://www.w3.org/1999/xhtml/vocab#license> "https://creativecommons.org/licenses/by-nc-nd/3.0/es/"^^xsd:string ;
+                                           rdfs:comment "OLM (Ontology of Learning Materials) is a general purpose ontology (but not a general ontology) about learning resources materials whose aim is to be consulted by teachers and students"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/rights
+<http://purl.org/dc/terms/rights> rdf:type owl:AnnotationProperty ;
+                                  rdfs:subPropertyOf <http://purl.org/net/provenance/ns#createdBy> .
+
+
+###  http://purl.org/net/provenance/ns#createdBy
+<http://purl.org/net/provenance/ns#createdBy> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#minQualifiedCardinality
+owl:minQualifiedCardinality rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#qualifiedCardinality
+owl:qualifiedCardinality rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/NET/c4dm/event.owl#product
+<http://purl.org/NET/c4dm/event.owl#product> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/dc/terms/hasPart
+<http://purl.org/dc/terms/hasPart> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/dc/terms/isPartOf
+<http://purl.org/dc/terms/isPartOf> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/dc/terms/references
+<http://purl.org/dc/terms/references> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/arrange
+:arrange rdf:type owl:ObjectProperty ;
+         rdfs:domain :EducationalOrganization ;
+         rdfs:range <http://purl.org/ontologydomain/oem/liteteach/StudyProgram> ;
+         rdfs:comment "Arrange is a property that relates an institution with a studyprogram"@en .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/attendsTo
+:attendsTo rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf <http://purl.org/ontologydomain/oem/liteteach/arrangedAt> .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/author
+:author rdf:type owl:ObjectProperty ;
+        rdfs:domain <http://xmlns.com/foaf/0.1/Person> ;
+        rdfs:comment "Author relates a person with a document made by that person"@en .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/contains
+:contains rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:comment "TeacherNotes can contains references or excepts of some books"@en .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/destinoDocumental
+:destinoDocumental rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :uploads ;
+                   rdfs:range <http://purl.org/ontologydomain/oem/litebibo/Webpage> .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/isAbout
+:isAbout rdf:type owl:ObjectProperty ;
+         rdfs:range <http://purl.org/ontologydomain/oem/liteteach/Module> ;
+         rdfs:comment "the theme of a resource"@en .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/isDescribedIn
+:isDescribedIn rdf:type owl:ObjectProperty ;
+               rdfs:range :Syllabus ;
+               rdfs:comment "A course is described in a syllabus"@en .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/isEnrolledIn
+:isEnrolledIn rdf:type owl:ObjectProperty ;
+              rdfs:domain <http://purl.org/ontologydomain/oem/liteteach/Student> ;
+              rdfs:range [ rdf:type owl:Class ;
+                           owl:unionOf ( :EducationalOrganization
+                                         <http://purl.org/ontologydomain/oem/liteteach/StudyProgram>
+                                       )
+                         ] ;
+              rdfs:comment "a Student is enrolled in a course"@en .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/isPresentedAt
+:isPresentedAt rdf:type owl:ObjectProperty ;
+               rdfs:domain <http://purl.org/ontologydomain/oem/litebibo/Slideshow> ;
+               rdfs:range <http://purl.org/ontologydomain/oem/liteteach/Lecture> ;
+               rdfs:comment "a slideshow is presented at a lecture"@en .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/isShownAt
+:isShownAt rdf:type owl:ObjectProperty ;
+           rdfs:domain <http://purl.org/ontologydomain/oem/litebibo/AudioVisualDocument> ;
+           rdfs:range <http://purl.org/ontologydomain/oem/liteteach/Lecture> ;
+           rdfs:comment "where a video is shown"@en .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/isTakenBy
+:isTakenBy rdf:type owl:ObjectProperty ;
+           rdfs:range <http://purl.org/ontologydomain/oem/liteteach/Student> ;
+           rdfs:comment "Notes are taken by a student"@en .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/origenDocumental
+:origenDocumental rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :uploads ;
+                  rdfs:range <http://purl.org/ontologydomain/oem/litebibo/Document> .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/puedeContener
+:puedeContener rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <http://purl.org/NET/c4dm/event.owl#product> .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/resumes
+:resumes rdf:type owl:ObjectProperty ;
+         rdfs:range <http://purl.org/ontologydomain/oem/liteteach/Lecture> ;
+         rdfs:comment "A resource resumes a lecture class"@en .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/setUp
+:setUp rdf:type owl:ObjectProperty ;
+       rdfs:domain :EducationalOrganization ;
+       rdfs:range <http://purl.org/ontologydomain/oem/litebibo/Website> ;
+       rdfs:comment "an institution set up a website"@en .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/takes
+:takes rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf owl:topObjectProperty ;
+       rdfs:domain <http://purl.org/ontologydomain/oem/liteteach/Student> ;
+       rdfs:range :LectureNotes ;
+       rdfs:comment "inverse relation of is taken by"@en .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/teachs
+:teachs rdf:type owl:ObjectProperty ;
+        rdfs:domain <http://purl.org/ontologydomain/oem/liteteach/Teacher> ;
+        rdfs:comment "a property that relates a teacher with a course"@en .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/uploads
+:uploads rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/use
+:use rdf:type owl:ObjectProperty ;
+     rdfs:subPropertyOf :uploads ;
+     rdfs:domain <http://purl.org/ontologydomain/oem/liteteach/Teacher> .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/worksIn
+:worksIn rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdfs:range <http://xmlns.com/foaf/0.1/Organization> .
+
+
+###  http://purl.org/ontologydomain/oem/litebibo/annotates
+<http://purl.org/ontologydomain/oem/litebibo/annotates> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/ontologydomain/oem/litebibo/cites
+<http://purl.org/ontologydomain/oem/litebibo/cites> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/ontologydomain/oem/litebibo/reproducedIn
+<http://purl.org/ontologydomain/oem/litebibo/reproducedIn> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/ontologydomain/oem/litebibo/reviewOf
+<http://purl.org/ontologydomain/oem/litebibo/reviewOf> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/ontologydomain/oem/liteteach/arrangedAt
+<http://purl.org/ontologydomain/oem/liteteach/arrangedAt> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/ontologydomain/oem/liteteach/studentGroup
+<http://purl.org/ontologydomain/oem/liteteach/studentGroup> rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/ontologydomain/oem/liteteach/teacherOf
+<http://purl.org/ontologydomain/oem/liteteach/teacherOf> rdf:type owl:ObjectProperty ;
+                                                         rdfs:range <http://purl.org/ontologydomain/oem/liteteach/StudentGroup> .
+
+
+###  http://xmlns.com/foaf/0.1/homepage
+<http://xmlns.com/foaf/0.1/homepage> rdf:type owl:ObjectProperty ;
+                                     rdfs:subPropertyOf owl:topObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/ontologydomain/oem/OLM/academicTerm
+:academicTerm rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/duration
+:duration rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/grading
+:grading rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/numSlides
+:numSlides rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/title
+:title rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://org.semanticweb.owlapi/error#Error1
+<http://org.semanticweb.owlapi/error#Error1> rdf:type owl:Class .
+
+
+###  http://org.semanticweb.owlapi/error#Error10
+<http://org.semanticweb.owlapi/error#Error10> rdf:type owl:Class .
+
+
+###  http://org.semanticweb.owlapi/error#Error2
+<http://org.semanticweb.owlapi/error#Error2> rdf:type owl:Class .
+
+
+###  http://org.semanticweb.owlapi/error#Error3
+<http://org.semanticweb.owlapi/error#Error3> rdf:type owl:Class .
+
+
+###  http://org.semanticweb.owlapi/error#Error4
+<http://org.semanticweb.owlapi/error#Error4> rdf:type owl:Class .
+
+
+###  http://org.semanticweb.owlapi/error#Error5
+<http://org.semanticweb.owlapi/error#Error5> rdf:type owl:Class .
+
+
+###  http://org.semanticweb.owlapi/error#Error6
+<http://org.semanticweb.owlapi/error#Error6> rdf:type owl:Class .
+
+
+###  http://org.semanticweb.owlapi/error#Error7
+<http://org.semanticweb.owlapi/error#Error7> rdf:type owl:Class .
+
+
+###  http://org.semanticweb.owlapi/error#Error8
+<http://org.semanticweb.owlapi/error#Error8> rdf:type owl:Class .
+
+
+###  http://org.semanticweb.owlapi/error#Error9
+<http://org.semanticweb.owlapi/error#Error9> rdf:type owl:Class .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/Bibliography
+:Bibliography rdf:type owl:Class ;
+              rdfs:subClassOf <http://purl.org/ontologydomain/oem/litebibo/Document> ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty <http://purl.org/dc/terms/references> ;
+                                owl:someValuesFrom <http://purl.org/ontologydomain/oem/litebibo/Book>
+                              ] ;
+              <http://purl.org/dc/terms/description> "A bibliograghy"@en .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/BookBibliography
+:BookBibliography rdf:type owl:Class ;
+                  rdfs:subClassOf <http://org.semanticweb.owlapi/error#Error2> ,
+                                  :Bibliography ;
+                  <http://purl.org/dc/terms/description> "Books's bibliography"@en .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/EducationalOrganization
+:EducationalOrganization rdf:type owl:Class ;
+                         rdfs:subClassOf <http://xmlns.com/foaf/0.1/Organization> ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :setUp ;
+                                           owl:someValuesFrom <http://purl.org/ontologydomain/oem/litebibo/Website>
+                                         ] ;
+                         owl:disjointWith <http://purl.org/ontologydomain/oem/liteteach/Lecture> ;
+                         <http://purl.org/dc/terms/description> "Institution such as Universities or Schools that arranges study programs"@en .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/LearningMaterial
+:LearningMaterial rdf:type owl:Class ;
+                  rdfs:subClassOf <http://purl.org/ontologydomain/oem/litebibo/Document> ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :isAbout ;
+                                    owl:someValuesFrom <http://purl.org/ontologydomain/oem/liteteach/Module>
+                                  ] ;
+                  <http://purl.org/dc/terms/description> "Learning materials are prepared by teachers that works for an educational institution"@en .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/LectureNotes
+:LectureNotes rdf:type owl:Class ;
+              rdfs:subClassOf :StudentMaterial ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :isTakenBy ;
+                                owl:someValuesFrom <http://purl.org/ontologydomain/oem/liteteach/Student>
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :resumes ;
+                                owl:someValuesFrom <http://purl.org/ontologydomain/oem/liteteach/Lecture>
+                              ] ;
+              rdfs:comment "Notes taken by students in a lecture class"@en .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/LectureSupportMaterial
+:LectureSupportMaterial rdf:type owl:Class ;
+                        rdfs:subClassOf :LearningMaterial ;
+                        rdfs:comment "Material and resources to support  teacher's lectures"@en .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/StudentMaterial
+:StudentMaterial rdf:type owl:Class ;
+                 rdfs:subClassOf <http://purl.org/ontologydomain/oem/litebibo/Document> ;
+                 <http://purl.org/dc/terms/description> "Material prepared by students"@en .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/Syllabus
+:Syllabus rdf:type owl:Class ;
+          rdfs:subClassOf <http://org.semanticweb.owlapi/error#Error1> ,
+                          <http://purl.org/ontologydomain/oem/litebibo/Document> ;
+          <http://purl.org/dc/terms/description> "The syllabus contains the contents and reference material of a course"@en .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/SyllabusBibliography
+:SyllabusBibliography rdf:type owl:Class ;
+                      rdfs:subClassOf :Bibliography ;
+                      <http://purl.org/dc/terms/description> "The bibliography with the materials of a course"@en .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/TableOfContents
+:TableOfContents rdf:type owl:Class ;
+                 rdfs:subClassOf <http://purl.org/ontologydomain/oem/litebibo/DocumentPart> ;
+                 rdfs:comment "Book's table of contents"@en .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/TeacherNotes
+:TeacherNotes rdf:type owl:Class ;
+              rdfs:subClassOf <http://purl.org/ontologydomain/oem/litebibo/Note> ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty <http://purl.org/dc/terms/hasPart> ;
+                                owl:someValuesFrom <http://purl.org/ontologydomain/oem/litebibo/BookSection>
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty <http://purl.org/dc/terms/hasPart> ;
+                                owl:someValuesFrom <http://purl.org/ontologydomain/oem/litebibo/Excerpt>
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty <http://purl.org/ontologydomain/oem/litebibo/cites> ;
+                                owl:someValuesFrom <http://purl.org/ontologydomain/oem/litebibo/BookSection>
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty <http://purl.org/ontologydomain/oem/litebibo/cites> ;
+                                owl:someValuesFrom <http://purl.org/ontologydomain/oem/litebibo/Excerpt>
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty <http://purl.org/ontologydomain/oem/litebibo/reviewOf> ;
+                                owl:someValuesFrom <http://purl.org/ontologydomain/oem/litebibo/Book>
+                              ] ;
+              <http://purl.org/dc/terms/description> "Notes prepared by tachers that resumes some lectures and also can include extract from books"@en .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/video
+:video rdf:type owl:Class ;
+       rdfs:subClassOf <http://purl.org/ontologydomain/oem/litebibo/AudioVisualDocument> ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :isShownAt ;
+                         owl:someValuesFrom <http://purl.org/ontologydomain/oem/liteteach/Lecture>
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :duration ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onDataRange xsd:int
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :title ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onDataRange owl:rational
+                       ] ;
+       rdfs:comment "A video can be hold and uploaded to a webpage and contains an explanation about a module of a subject"@en .
+
+
+###  http://purl.org/ontologydomain/oem/OLM//PresentialLecture
+<http://purl.org/ontologydomain/oem/OLM//PresentialLecture> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://purl.org/ontologydomain/oem/liteteach/Lecture> ;
+                                                            owl:disjointWith <http://purl.org/ontologydomain/oem/OLM//eLearningLecture> ;
+                                                            rdfs:comment "Lecture that is given in a room with students"@en .
+
+
+###  http://purl.org/ontologydomain/oem/OLM//TransmisionDocumental
+<http://purl.org/ontologydomain/oem/OLM//TransmisionDocumental> rdf:type owl:Class ;
+                                                                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty :destinoDocumental ;
+                                                                                  owl:someValuesFrom <http://purl.org/ontologydomain/oem/litebibo/Webpage>
+                                                                                ] ,
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty :origenDocumental ;
+                                                                                  owl:someValuesFrom :Bibliography
+                                                                                ] ,
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty :origenDocumental ;
+                                                                                  owl:someValuesFrom :Syllabus
+                                                                                ] ,
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty :origenDocumental ;
+                                                                                  owl:someValuesFrom <http://purl.org/ontologydomain/oem/litebibo/BookSection>
+                                                                                ] ,
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty :origenDocumental ;
+                                                                                  owl:someValuesFrom <http://purl.org/ontologydomain/oem/litebibo/Excerpt>
+                                                                                ] ,
+                                                                                [ rdf:type owl:Restriction ;
+                                                                                  owl:onProperty :origenDocumental ;
+                                                                                  owl:someValuesFrom <http://xmlns.com/foaf/0.1/Document>
+                                                                                ] ;
+                                                                rdfs:comment "this is a bias-class to represent a n-ary relation among document, webpage and teacher"^^xsd:string .
+
+
+###  http://purl.org/ontologydomain/oem/OLM//eLearningLecture
+<http://purl.org/ontologydomain/oem/OLM//eLearningLecture> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://purl.org/ontologydomain/oem/liteteach/Lecture> ,
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <http://purl.org/ontologydomain/oem/litebibo/reproducedIn> ;
+                                                                             owl:someValuesFrom :video
+                                                                           ] ;
+                                                           <http://purl.org/dc/terms/description> "Lecture given by means of a web portal"@en ;
+                                                           rdfs:comment "Lecture given by means of a web page/portal"@en .
+
+
+###  http://purl.org/ontologydomain/oem/litebibo/AudioVisualDocument
+<http://purl.org/ontologydomain/oem/litebibo/AudioVisualDocument> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty :resumes ;
+                                                                                    owl:someValuesFrom <http://purl.org/ontologydomain/oem/liteteach/Lecture>
+                                                                                  ] ;
+                                                                  owl:disjointWith <http://purl.org/ontologydomain/oem/litebibo/Book> .
+
+
+###  http://purl.org/ontologydomain/oem/litebibo/Book
+<http://purl.org/ontologydomain/oem/litebibo/Book> rdf:type owl:Class ;
+                                                   rdfs:subClassOf <http://org.semanticweb.owlapi/error#Error10> ,
+                                                                   <http://org.semanticweb.owlapi/error#Error7> ,
+                                                                   <http://org.semanticweb.owlapi/error#Error8> ,
+                                                                   <http://org.semanticweb.owlapi/error#Error9> ,
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :title ;
+                                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                     owl:onDataRange xsd:string
+                                                                   ] ;
+                                                   owl:disjointWith <http://purl.org/ontologydomain/oem/litebibo/Note> .
+
+
+###  http://purl.org/ontologydomain/oem/litebibo/BookSection
+<http://purl.org/ontologydomain/oem/litebibo/BookSection> rdf:type owl:Class .
+
+
+###  http://purl.org/ontologydomain/oem/litebibo/Document
+<http://purl.org/ontologydomain/oem/litebibo/Document> rdf:type owl:Class .
+
+
+###  http://purl.org/ontologydomain/oem/litebibo/DocumentPart
+<http://purl.org/ontologydomain/oem/litebibo/DocumentPart> rdf:type owl:Class .
+
+
+###  http://purl.org/ontologydomain/oem/litebibo/Excerpt
+<http://purl.org/ontologydomain/oem/litebibo/Excerpt> rdf:type owl:Class .
+
+
+###  http://purl.org/ontologydomain/oem/litebibo/Note
+<http://purl.org/ontologydomain/oem/litebibo/Note> rdf:type owl:Class ;
+                                                   rdfs:subClassOf :LearningMaterial ,
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty <http://purl.org/ontologydomain/oem/litebibo/reviewOf> ;
+                                                                     owl:someValuesFrom <http://purl.org/ontologydomain/oem/liteteach/Lecture>
+                                                                   ] ;
+                                                   owl:disjointWith <http://purl.org/ontologydomain/oem/liteteach/Course> .
+
+
+###  http://purl.org/ontologydomain/oem/litebibo/Slide
+<http://purl.org/ontologydomain/oem/litebibo/Slide> rdf:type owl:Class ;
+                                                    rdfs:subClassOf :LectureSupportMaterial ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://purl.org/ontologydomain/oem/litebibo/cites> ;
+                                                                      owl:someValuesFrom <http://purl.org/ontologydomain/oem/litebibo/BookSection>
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://purl.org/ontologydomain/oem/litebibo/cites> ;
+                                                                      owl:someValuesFrom <http://purl.org/ontologydomain/oem/litebibo/Excerpt>
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :numSlides ;
+                                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                      owl:onDataRange xsd:int
+                                                                    ] ,
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :title ;
+                                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                      owl:onDataRange xsd:string
+                                                                    ] ;
+                                                    owl:disjointWith <http://xmlns.com/foaf/0.1/Image> .
+
+
+###  http://purl.org/ontologydomain/oem/litebibo/Slideshow
+<http://purl.org/ontologydomain/oem/litebibo/Slideshow> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://org.semanticweb.owlapi/error#Error6> ,
+                                                                        :LectureSupportMaterial ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :isPresentedAt ;
+                                                                          owl:someValuesFrom <http://purl.org/ontologydomain/oem/liteteach/Lecture>
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :title ;
+                                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                          owl:onDataRange xsd:string
+                                                                        ] .
+
+
+###  http://purl.org/ontologydomain/oem/litebibo/Webpage
+<http://purl.org/ontologydomain/oem/litebibo/Webpage> rdf:type owl:Class ;
+                                                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :contains ;
+                                                                        owl:someValuesFrom <http://purl.org/ontologydomain/oem/litebibo/Document>
+                                                                      ] ,
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :title ;
+                                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                        owl:onDataRange xsd:string
+                                                                      ] ;
+                                                      owl:disjointWith <http://xmlns.com/foaf/0.1/Person> .
+
+
+###  http://purl.org/ontologydomain/oem/litebibo/Website
+<http://purl.org/ontologydomain/oem/litebibo/Website> rdf:type owl:Class .
+
+
+###  http://purl.org/ontologydomain/oem/liteteach/Course
+<http://purl.org/ontologydomain/oem/liteteach/Course> rdf:type owl:Class ;
+                                                      rdfs:subClassOf <http://org.semanticweb.owlapi/error#Error3> ,
+                                                                      <http://org.semanticweb.owlapi/error#Error4> ,
+                                                                      <http://org.semanticweb.owlapi/error#Error5> ,
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://purl.org/dc/terms/isPartOf> ;
+                                                                        owl:someValuesFrom <http://purl.org/ontologydomain/oem/liteteach/StudyProgram>
+                                                                      ] ,
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://purl.org/ontologydomain/oem/liteteach/studentGroup> ;
+                                                                        owl:someValuesFrom <http://purl.org/ontologydomain/oem/liteteach/StudentGroup>
+                                                                      ] ,
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :isDescribedIn ;
+                                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                        owl:onClass :Syllabus
+                                                                      ] ,
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :grading ;
+                                                                        owl:someValuesFrom rdfs:Literal
+                                                                      ] ,
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :academicTerm ;
+                                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                        owl:onDataRange xsd:string
+                                                                      ] .
+
+
+###  http://purl.org/ontologydomain/oem/liteteach/Lecture
+<http://purl.org/ontologydomain/oem/liteteach/Lecture> rdf:type owl:Class .
+
+
+###  http://purl.org/ontologydomain/oem/liteteach/Material
+<http://purl.org/ontologydomain/oem/liteteach/Material> rdf:type owl:Class ;
+                                                        owl:equivalentClass <http://xmlns.com/foaf/0.1/Document> ;
+                                                        rdfs:subClassOf <http://xmlns.com/foaf/0.1/Document> .
+
+
+###  http://purl.org/ontologydomain/oem/liteteach/Module
+<http://purl.org/ontologydomain/oem/liteteach/Module> rdf:type owl:Class ;
+                                                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://purl.org/dc/terms/hasPart> ;
+                                                                        owl:someValuesFrom <http://purl.org/ontologydomain/oem/liteteach/Lecture>
+                                                                      ] .
+
+
+###  http://purl.org/ontologydomain/oem/liteteach/Student
+<http://purl.org/ontologydomain/oem/liteteach/Student> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <http://purl.org/dc/terms/isPartOf> ;
+                                                                         owl:someValuesFrom <http://xmlns.com/foaf/0.1/Group>
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :attendsTo ;
+                                                                         owl:someValuesFrom <http://purl.org/ontologydomain/oem/liteteach/Lecture>
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :author ;
+                                                                         owl:someValuesFrom :StudentMaterial
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :isEnrolledIn ;
+                                                                         owl:someValuesFrom <http://purl.org/ontologydomain/oem/liteteach/StudyProgram>
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :takes ;
+                                                                         owl:someValuesFrom <http://purl.org/ontologydomain/oem/litebibo/Note>
+                                                                       ] ;
+                                                       owl:disjointWith <http://purl.org/ontologydomain/oem/liteteach/StudentGroup> ;
+                                                       rdfs:comment "Student enrolled in a study program arranged by an educational institution"@en .
+
+
+###  http://purl.org/ontologydomain/oem/liteteach/StudentGroup
+<http://purl.org/ontologydomain/oem/liteteach/StudentGroup> rdf:type owl:Class ;
+                                                            rdfs:subClassOf <http://xmlns.com/foaf/0.1/Group> .
+
+
+###  http://purl.org/ontologydomain/oem/liteteach/StudyProgram
+<http://purl.org/ontologydomain/oem/liteteach/StudyProgram> rdf:type owl:Class ;
+                                                            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty <http://purl.org/dc/terms/hasPart> ;
+                                                                              owl:someValuesFrom <http://purl.org/ontologydomain/oem/liteteach/Course>
+                                                                            ] ,
+                                                                            [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty :title ;
+                                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                              owl:onDataRange xsd:string
+                                                                            ] .
+
+
+###  http://purl.org/ontologydomain/oem/liteteach/Teacher
+<http://purl.org/ontologydomain/oem/liteteach/Teacher> rdf:type owl:Class ;
+                                                       rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :author ;
+                                                                         owl:someValuesFrom :LearningMaterial
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :author ;
+                                                                         owl:someValuesFrom :Syllabus
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :teachs ;
+                                                                         owl:someValuesFrom <http://purl.org/ontologydomain/oem/liteteach/Course>
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :teachs ;
+                                                                         owl:someValuesFrom <http://purl.org/ontologydomain/oem/liteteach/Lecture>
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :use ;
+                                                                         owl:someValuesFrom <http://purl.org/ontologydomain/oem/OLM//TransmisionDocumental>
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty :worksIn ;
+                                                                         owl:someValuesFrom :EducationalOrganization
+                                                                       ] ,
+                                                                       [ rdf:type owl:Restriction ;
+                                                                         owl:onProperty <http://purl.org/ontologydomain/oem/litebibo/annotates> ;
+                                                                         owl:someValuesFrom <http://purl.org/ontologydomain/oem/litebibo/Book>
+                                                                       ] ;
+                                                       rdfs:comment "Teacher that works in an educational institution"@en .
+
+
+###  http://xmlns.com/foaf/0.1/Document
+<http://xmlns.com/foaf/0.1/Document> rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Group
+<http://xmlns.com/foaf/0.1/Group> rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Image
+<http://xmlns.com/foaf/0.1/Image> rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+<http://xmlns.com/foaf/0.1/Organization> rdf:type owl:Class ;
+                                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :arrange ;
+                                                           owl:someValuesFrom <http://purl.org/ontologydomain/oem/liteteach/StudyProgram>
+                                                         ] .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://purl.org/ontologydomain/oem/OLM/EvaluacionDeOntologias
+:EvaluacionDeOntologias rdf:type owl:NamedIndividual ,
+                                 <http://purl.org/ontologydomain/oem/OLM//PresentialLecture> .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/MUIA
+:MUIA rdf:type owl:NamedIndividual ,
+               <http://purl.org/ontologydomain/oem/liteteach/StudyProgram> .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/MariCarmenSuarez
+:MariCarmenSuarez rdf:type owl:NamedIndividual ,
+                           <http://purl.org/ontologydomain/oem/liteteach/Teacher> ;
+                  :teachs :MetodologiaNeOn ;
+                  :use :transmisionVideo1 .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/MarianoFernandez
+:MarianoFernandez rdf:type owl:NamedIndividual ,
+                           <http://purl.org/ontologydomain/oem/liteteach/Teacher> ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :teachs ;
+                             owl:someValuesFrom <http://purl.org/ontologydomain/oem/liteteach/Course>
+                           ] ;
+                  :teachs :EvaluacionDeOntologias .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/MetodologiaNeOn
+:MetodologiaNeOn rdf:type owl:NamedIndividual ,
+                          <http://purl.org/ontologydomain/oem/OLM//eLearningLecture> .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/OntologyEngineering
+:OntologyEngineering rdf:type owl:NamedIndividual ,
+                              <http://purl.org/ontologydomain/oem/litebibo/Book> .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/PabloGonzalez
+:PabloGonzalez rdf:type owl:NamedIndividual ,
+                        <http://purl.org/ontologydomain/oem/liteteach/Student> .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/PortalUPVX
+:PortalUPVX rdf:type owl:NamedIndividual ,
+                     <http://purl.org/ontologydomain/oem/litebibo/Website> .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/RaulDelAguila
+:RaulDelAguila rdf:type owl:NamedIndividual ,
+                        <http://purl.org/ontologydomain/oem/liteteach/Student> .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/TecnicasSemanticasAvanzadas
+:TecnicasSemanticasAvanzadas rdf:type owl:NamedIndividual ,
+                                      <http://purl.org/ontologydomain/oem/liteteach/Course> .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/UIMP
+:UIMP rdf:type owl:NamedIndividual ,
+               :EducationalOrganization ;
+      :arrange :MUIA .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/WebTecnologiaSemanticaAvanzada
+:WebTecnologiaSemanticaAvanzada rdf:type owl:NamedIndividual ,
+                                         <http://purl.org/ontologydomain/oem/litebibo/Webpage> .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/transmisionVideo1
+:transmisionVideo1 rdf:type owl:NamedIndividual ,
+                            <http://purl.org/ontologydomain/oem/OLM//TransmisionDocumental> ;
+                   :destinoDocumental :WebTecnologiaSemanticaAvanzada ;
+                   :origenDocumental :video_session_evaluacion .
+
+
+###  http://purl.org/ontologydomain/oem/OLM/video_session_evaluacion
+:video_session_evaluacion rdf:type owl:NamedIndividual ,
+                                   :video ;
+                          :isShownAt :EvaluacionDeOntologias .
+
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+] .
+
+[ owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+[ owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+ ] .
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://purl.org/ontologydomain/oem/OLM/#isPresentedAt> rdfs:comment "this object property is similar to isShownAt, but the subject is  a slideshow instead of a video"^^xsd:string ;
+                                                         rdfs:seeAlso "isShownAt"^^xsd:string .
+
+
+<http://purl.org/ontologydomain/oem/OLM/#isShownAt> rdfs:comment "this property relates a video with a lecture in which this resource is shown"^^xsd:string .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Bibliography
+                :Syllabus
+                <http://purl.org/ontologydomain/oem/litebibo/AudioVisualDocument>
+                <http://purl.org/ontologydomain/oem/litebibo/Note>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :EducationalOrganization
+                <http://purl.org/ontologydomain/oem/litebibo/Document>
+                <http://purl.org/ontologydomain/oem/litebibo/Webpage>
+                <http://purl.org/ontologydomain/oem/litebibo/Website>
+                <http://purl.org/ontologydomain/oem/liteteach/Module>
+                <http://purl.org/ontologydomain/oem/liteteach/StudentGroup>
+                <http://purl.org/ontologydomain/oem/liteteach/StudyProgram>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :LectureNotes
+                <http://purl.org/ontologydomain/oem/litebibo/Book>
+                <http://purl.org/ontologydomain/oem/litebibo/Slideshow>
+              )
+] .
+
+
+###  Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/
